@@ -62,26 +62,28 @@ const Signup = () => {
   return (
     <div className="h-screen flex">
       {/* Left Half - Image/Graphics */}
-      <div className="w-3/5 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center">
-        <div className="text-center text-white p-8">
-          <Briefcase className="w-24 h-24 mx-auto mb-6" />
-          <h1 className="text-4xl font-bold mb-4">Join TalentFlow</h1>
-          <p className="text-xl mb-8">Start your career journey</p>
+      <div className="w-3/5 p-4 bg-white">
+        <div className=" h-full bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center rounded-lg">
+          <div className="text-center text-white p-8">
+            <Briefcase className="w-24 h-24 mx-auto mb-6" />
+            <h1 className="text-4xl font-bold mb-4">Join TalentFlow</h1>
+            <p className="text-xl mb-8">Start your career journey</p>
 
-          <div className="space-y-6">
-            <div className="bg-white/20 rounded-lg p-4">
-              <div className="text-2xl font-bold">50,000+</div>
-              <div className="text-green-100">Active Users</div>
-            </div>
+            <div className="space-y-6">
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-bold">50,000+</div>
+                <div className="text-green-100">Active Users</div>
+              </div>
 
-            <div className="bg-white/20 rounded-lg p-4">
-              <div className="text-2xl font-bold">10,000+</div>
-              <div className="text-green-100">Job Opportunities</div>
-            </div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-bold">10,000+</div>
+                <div className="text-green-100">Job Opportunities</div>
+              </div>
 
-            <div className="bg-white/20 rounded-lg p-4">
-              <div className="text-2xl font-bold">500+</div>
-              <div className="text-green-100">Partner Companies</div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-bold">500+</div>
+                <div className="text-green-100">Partner Companies</div>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +105,7 @@ const Signup = () => {
                 <label
                   className={`cursor-pointer rounded-lg border-2 p-3 relative ${
                     signupData.accountType === 'jobseeker'
-                      ? 'border-green-500 bg-green-50'
+                      ? 'border-green-600 bg-green-50'
                       : 'border-gray-300'
                   }`}
                 >
@@ -131,7 +133,7 @@ const Signup = () => {
                 <label
                   className={`cursor-pointer rounded-lg border-2 p-3 relative ${
                     signupData.accountType === 'employer'
-                      ? 'border-blue-500 bg-blue-50'
+                      ? 'border-green-600 bg-green-50'
                       : 'border-gray-300'
                   }`}
                 >
@@ -146,13 +148,13 @@ const Signup = () => {
                   <div className="text-center">
                     <Building2
                       className={`w-6 h-6 mx-auto mb-2 ${
-                        signupData.accountType === 'employer' ? 'text-blue-600' : 'text-gray-400'
+                        signupData.accountType === 'employer' ? 'text-green-600' : 'text-gray-400'
                       }`}
                     />
                     <div className="font-medium text-sm">Employer</div>
                   </div>
                   {signupData.accountType === 'employer' && (
-                    <CheckCircle2 className="absolute top-2 right-2 w-4 h-4 text-blue-600" />
+                    <CheckCircle2 className="absolute top-2 right-2 w-4 h-4 text-green-600" />
                   )}
                 </label>
               </div>
@@ -322,7 +324,9 @@ const Signup = () => {
               onClick={handleSignup}
               disabled={isLoading}
               className={`w-full py-3 px-4 rounded-lg font-medium text-white ${
-                isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+                isLoading
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-br from-green-500 to-blue-600  hover:bg-blue-700 hover:shadow-lg transition-all ease-in-out'
               }`}
             >
               {isLoading ? (

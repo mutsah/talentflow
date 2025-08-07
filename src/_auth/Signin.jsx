@@ -47,24 +47,26 @@ const Signin = () => {
   return (
     <div className="h-screen flex">
       {/* Left Half - Image/Graphics */}
-      <div className="w-3/5 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-        <div className="text-center text-white p-8">
-          <Users className="w-24 h-24 mx-auto mb-6" />
-          <h1 className="text-4xl font-bold mb-4">TalentFlow</h1>
-          <p className="text-xl mb-8">Connect with opportunities</p>
+      <div className="w-3/5 p-4 bg-white">
+        <div className="h-full flex items-center justify-center bg-gradient-to-br from-green-500 to-blue-600 rounded-lg">
+          <div className="text-center text-white p-8">
+            <Users className="w-24 h-24 mx-auto mb-6" />
+            <h1 className="text-4xl font-bold mb-4">TalentFlow</h1>
+            <p className="text-xl mb-8">Connect with opportunities</p>
 
-          <div className="space-y-4 text-left max-w-xs">
-            <div className="flex items-center">
-              <TrendingUp className="w-6 h-6 mr-3" />
-              <span>Career Growth</span>
-            </div>
-            <div className="flex items-center">
-              <Award className="w-6 h-6 mr-3" />
-              <span>Top Opportunities</span>
-            </div>
-            <div className="flex items-center">
-              <Target className="w-6 h-6 mr-3" />
-              <span>Perfect Match</span>
+            <div className="space-y-4 text-left max-w-xs">
+              <div className="flex items-center">
+                <TrendingUp className="w-6 h-6 mr-3" />
+                <span>Career Growth</span>
+              </div>
+              <div className="flex items-center">
+                <Award className="w-6 h-6 mr-3" />
+                <span>Top Opportunities</span>
+              </div>
+              <div className="flex items-center">
+                <Target className="w-6 h-6 mr-3" />
+                <span>Perfect Match</span>
+              </div>
             </div>
           </div>
         </div>
@@ -133,7 +135,7 @@ const Signin = () => {
                 />
                 <span className="ml-2 text-sm text-gray-600">Remember me</span>
               </label>
-              <button className="text-sm text-blue-600 hover:text-blue-700">
+              <button className="text-sm text-green-600 hover:text-green-700">
                 Forgot password?
               </button>
             </div>
@@ -142,7 +144,9 @@ const Signin = () => {
               onClick={handleLogin}
               disabled={isLoading}
               className={`w-full py-3 px-4 rounded-lg font-medium text-white ${
-                isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                isLoading
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-br from-green-500 to-blue-600  hover:bg-blue-700 hover:shadow-lg transition-all ease-in-out'
               }`}
             >
               {isLoading ? (
@@ -191,7 +195,7 @@ const Signin = () => {
                 Don't have an account?{' '}
                 <button
                   onClick={() => navigate('/sign-up')}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
+                  className="text-green-600 hover:text-green-700 font-medium"
                 >
                   Sign up
                 </button>
