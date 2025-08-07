@@ -91,7 +91,7 @@ const Signup = () => {
 
       {/* Right Half - Signup Form */}
       <div className="w-2/5 bg-white flex items-center justify-center overflow-y-auto">
-        <div className="w-full max-w-md p-8">
+        <div className="w-full max-w-md p-8 py-8">
           <div className="my-6">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
             <p className="text-gray-600">Join our platform today</p>
@@ -261,7 +261,7 @@ const Signup = () => {
                 {errors.password && <p className="mt-1 text-xs text-red-600">{errors.password}</p>}
               </div>
 
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Confirm Password
                 </label>
@@ -292,7 +292,7 @@ const Signup = () => {
                 {errors.confirmPassword && (
                   <p className="mt-1 text-xs text-red-600">{errors.confirmPassword}</p>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* Terms Agreement */}
