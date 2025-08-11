@@ -8,13 +8,10 @@ const Signup = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [signupData, setSignupData] = useState({
-    firstName: '',
-    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
     accountType: 'jobseeker',
-    company: '',
     agreeToTerms: false,
   });
   const [errors, setErrors] = useState({});
@@ -33,8 +30,7 @@ const Signup = () => {
 
   const validateSignup = () => {
     const newErrors = {};
-    if (!signupData.firstName.trim()) newErrors.firstName = 'First name is required';
-    if (!signupData.lastName.trim()) newErrors.lastName = 'Last name is required';
+
     if (!signupData.email) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(signupData.email)) newErrors.email = 'Invalid email format';
     if (!signupData.password) newErrors.password = 'Password is required';
@@ -160,61 +156,6 @@ const Signup = () => {
               </div>
             </div>
 
-            {/* Name Fields */}
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={signupData.firstName}
-                  onChange={handleSignupChange}
-                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                    errors.firstName ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="John"
-                />
-                {errors.firstName && (
-                  <p className="mt-1 text-xs text-red-600">{errors.firstName}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={signupData.lastName}
-                  onChange={handleSignupChange}
-                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                    errors.lastName ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="Doe"
-                />
-                {errors.lastName && <p className="mt-1 text-xs text-red-600">{errors.lastName}</p>}
-              </div>
-            </div>
-
-            {/* Company Field (Employers only) */}
-            {signupData.accountType === 'employer' && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                <div className="relative">
-                  <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <input
-                    type="text"
-                    name="company"
-                    value={signupData.company}
-                    onChange={handleSignupChange}
-                    className={`w-full pl-9 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                      errors.company ? 'border-red-300' : 'border-gray-300'
-                    }`}
-                    placeholder="Your Company Inc."
-                  />
-                </div>
-                {errors.company && <p className="mt-1 text-xs text-red-600">{errors.company}</p>}
-              </div>
-            )}
-
             {/* Email */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
@@ -260,39 +201,6 @@ const Signup = () => {
                 </div>
                 {errors.password && <p className="mt-1 text-xs text-red-600">{errors.password}</p>}
               </div>
-
-              {/* <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Confirm Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <input
-                    type={showConfirmPassword ? 'text' : 'password'}
-                    name="confirmPassword"
-                    value={signupData.confirmPassword}
-                    onChange={handleSignupChange}
-                    className={`w-full pl-9 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                      errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
-                    }`}
-                    placeholder="••••••••"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showConfirmPassword ? (
-                      <EyeOff className="w-4 h-4" />
-                    ) : (
-                      <Eye className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
-                {errors.confirmPassword && (
-                  <p className="mt-1 text-xs text-red-600">{errors.confirmPassword}</p>
-                )}
-              </div> */}
             </div>
 
             {/* Terms Agreement */}
