@@ -4,6 +4,7 @@ import Signin from './_auth/Signin';
 import Signup from './_auth/Signup';
 import WebsiteLayout from './_root/website/WebsiteLayout';
 import Home from './_root/website/pages/Home';
+import DashboardUser from './_root/user/UserPortal';
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,8 @@ const AppRoutes = () => {
         <Route element={<WebsiteLayout></WebsiteLayout>}>
           <Route index element={<Home></Home>}></Route>
         </Route>
+
+        <Route path="dashboard" element={<DashboardUser></DashboardUser>}></Route>
 
         {/* auth routes */}
         <Route path="sign-in" element={<Signin></Signin>}></Route>
